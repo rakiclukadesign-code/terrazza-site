@@ -272,6 +272,19 @@ section{padding:var(--s-128) 0}
   .dish:nth-child(2),.dish:nth-child(3){margin-top:0; grid-column:auto; max-width:none}
   .dish__frame{aspect-ratio:4 / 5; border-radius:160px 160px 4px 4px}
   .thesis{padding:var(--s-64) 0}
+
+  /* --- mobilna doterivanja --- */
+  /* 1. hero naslov u jedan red na svim telefonima (provereno od 320px navise) */
+  /* 2. body tekst priblizen naslovu na 12px */
+  .hero h1{font-size:clamp(24px,7.6vw,40px); margin:var(--s-24) 0 var(--s-12)}
+  /* 3. veci razmak izmedju kartica jela */
+  .dishes{gap:36px}
+  /* 4. "Specijalitet kuce" blize nazivu jela */
+  .dish__tag + h3{margin-top:var(--s-12)}
+  /* 5. "Ambijent koji prica pricu" u dva uravnotezena reda */
+  .space h2{text-wrap:balance}
+  /* 6. tekst iznad trece slike blizi drugoj: 24px razmak mreze + 4px = 28px */
+  .space__note{margin-top:var(--s-4)}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition-duration:.01ms !important}
