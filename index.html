@@ -54,7 +54,8 @@ a{color:inherit; text-decoration:none}
   font-size:12px; font-weight:400; letter-spacing:.32em;
   text-transform:uppercase; color:var(--brass-lit);
 }
-h1,h2,h3{font-family:var(--display); font-weight:400; margin:0; line-height:1.08}
+h1,h2,h3{font-family:var(--display); font-weight:400; margin:0; line-height:1.08; text-wrap:balance}
+p{text-wrap:pretty}
 h1{font-size:clamp(40px,7.5vw,96px); letter-spacing:-.01em}
 h2{font-size:clamp(32px,4.4vw,56px)}
 h3{font-size:24px; line-height:1.24}
@@ -130,7 +131,7 @@ section{padding:var(--s-128) 0}
   background:radial-gradient(60% 50% at 74% 30%, rgba(168,130,60,.14) 0%, transparent 70%);
 }
 .hero__inner{position:relative; z-index:2}
-.hero h1{margin:var(--s-24) 0 var(--s-32); max-width:960px}
+.hero h1{margin:var(--s-4) 0 var(--s-12); max-width:960px}
 .hero h1 em{font-style:italic; color:var(--brass-lit)}
 .hero__row{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:var(--s-32)}
 .hero__row p{max-width:400px; font-size:16px; color:#C9C5BE}
@@ -165,7 +166,7 @@ section{padding:var(--s-128) 0}
   top:var(--s-24); bottom:var(--s-24); border:1px solid rgba(242,239,233,.16); pointer-events:none;
 }
 .about__body{grid-column:7 / span 6; padding-left:var(--s-48)}
-.about__body h2{font-size:clamp(32px,3.8vw,48px); margin:var(--s-16) 0 var(--s-24)}
+.about__body h2{font-size:clamp(32px,3.8vw,48px); margin:var(--s-4) 0 var(--s-12)}
 .about__body p + p{margin-top:var(--s-16)}
 .vision{margin-top:var(--s-32); padding-top:var(--s-24); border-top:1px solid rgba(168,130,60,.28)}
 .vision p{
@@ -197,13 +198,13 @@ section{padding:var(--s-128) 0}
   content:''; position:absolute; inset:var(--s-12);
   border:1px solid rgba(224,196,140,.28); border-radius:188px 188px 4px 4px; pointer-events:none;
 }
-.dish h3{font-size:28px; margin:var(--s-24) 0 var(--s-8)}
+.dish h3{font-size:28px; margin:var(--s-24) 0 var(--s-12)}
 .dish p{font-size:16px; color:var(--muted); line-height:1.6}
 .dishes__cta{margin-top:var(--s-96); text-align:center}
 
 /* ============ PROSTOR ============ */
 .space{background:var(--antracit)}
-.space__intro{margin-top:var(--s-32); max-width:552px; margin-left:228px; color:#D8D4CC}
+.space__intro{margin-top:var(--s-12); max-width:552px; margin-left:228px; color:#D8D4CC}
 .space__intro em{font-style:italic}
 .space__grid{display:grid; grid-template-columns:repeat(12,1fr); gap:var(--s-24); margin-top:var(--s-64)}
 .space__grid figure{margin:0; overflow:hidden; background:#0F0F10}
@@ -221,7 +222,7 @@ section{padding:var(--s-128) 0}
 
 /* ============ REZERVACIJE ============ */
 .reserve{text-align:center; position:relative; overflow:hidden}
-.reserve h2{max-width:800px; margin:var(--s-24) auto var(--s-32)}
+.reserve h2{max-width:800px; margin:var(--s-4) auto var(--s-12)}
 .reserve .lede{margin:0 auto var(--s-48)}
 .reserve__actions{display:flex; flex-wrap:wrap; gap:var(--s-16); justify-content:center}
 
@@ -276,13 +277,13 @@ section{padding:var(--s-128) 0}
   /* --- mobilna doterivanja --- */
   /* 1. hero naslov u jedan red na svim telefonima (provereno od 320px navise) */
   /* 2. body tekst priblizen naslovu na 12px */
-  .hero h1{font-size:clamp(24px,7.6vw,40px); margin:var(--s-24) 0 var(--s-12)}
+  .hero h1{font-size:clamp(24px,7.6vw,40px); margin:var(--s-4) 0 var(--s-12)}
   /* 3. veci razmak izmedju kartica jela */
-  .dishes{gap:36px}
+  .dishes{gap:52px}
   /* 4. "Specijalitet kuce" blize nazivu jela */
-  .dish__tag + h3{margin-top:var(--s-12)}
+  .dish__tag + h3{margin-top:var(--s-4)}
   /* 5. "Ambijent koji prica pricu" u dva uravnotezena reda */
-  .space h2{text-wrap:balance}
+  .space h2{font-size:clamp(20px,6.6vw,32px)}
   /* 6. tekst iznad trece slike blizi drugoj: 24px razmak mreze + 4px = 28px */
   .space__note{margin-top:var(--s-4)}
 }
@@ -366,7 +367,7 @@ section{padding:var(--s-128) 0}
     <div class="dishes__head reveal">
       <div>
         <p class="eyebrow">Iz naše kuhinje</p>
-        <h2 style="margin-top:var(--s-24)">Tri jela <em>da ricordare</em></h2>
+        <h2 style="margin-top:var(--s-4)">Tri jela <em>da ricordare</em></h2>
       </div>
       <p class="small">Ostalo vas čeka u meniju — od predjela do deserta i karte pića.</p>
     </div>
@@ -409,7 +410,7 @@ section{padding:var(--s-128) 0}
   <div class="wrap">
     <div class="reveal">
       <p class="eyebrow">Trattoria</p>
-      <h2 style="margin-top:var(--s-24); max-width:640px">Ambijent <span class="k-anchor">k</span>oji priča priču</h2>
+      <h2 style="margin-top:var(--s-4); max-width:640px">Ambijent <span class="k-anchor">k</span>oji priča priču</h2>
       <p class="space__intro">Ovde nastaju naše <em>tre piatti da ricordare</em>. Od terase okupane suncem i šumom reke, do sale koja odiše bezvremenskim šarmom pod autentičnim svodovima. Vaše je samo da izaberete gde želite da stvorite nove uspomene.</p>
     </div>
     <div class="space__grid">
@@ -428,7 +429,7 @@ section{padding:var(--s-128) 0}
   <div class="wrap">
     <div class="reveal" style="text-align:center">
       <p class="eyebrow">Recenzije</p>
-      <h2 style="margin-top:var(--s-24)">Šta kažu gosti</h2>
+      <h2 style="margin-top:var(--s-4)">Šta kažu gosti</h2>
     </div>
     <div class="reviews">
       <blockquote class="review reveal">
