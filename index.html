@@ -133,7 +133,7 @@ section{padding:var(--s-128) 0}
 .hero__inner{position:relative; z-index:2}
 .hero h1{margin:var(--s-8) 0 var(--s-12); max-width:960px}
 .hero h1 em{font-style:italic; color:var(--brass-lit)}
-.hero__row{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:28px}
+.hero__row{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:52px}
 .hero__row p{max-width:400px; font-size:16px; color:#C9C5BE}
 
 /* uvod u hero: postepeno */
@@ -175,7 +175,7 @@ section{padding:var(--s-128) 0}
 }
 
 /* ============ JELA ============ */
-.dishes__head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:var(--s-12); margin-bottom:40px}
+.dishes__head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:var(--s-12); margin-bottom:100px}
 .dishes__head h2{max-width:640px}
 .dishes__head h2 em{font-style:italic; color:var(--brass-lit)}
 .dishes__head .small{max-width:280px; line-height:1.6; margin-bottom:var(--s-8)}
@@ -192,7 +192,7 @@ section{padding:var(--s-128) 0}
   font-size:12px; letter-spacing:.28em; text-transform:uppercase;
   color:var(--brass-lit); margin-top:var(--s-24);
 }
-.dish__tag + h3{margin-top:var(--s-8)}
+.dish__tag + h3{margin-top:var(--s-4)}
 .dish:hover .dish__frame img{transform:scale(1.05)}
 .dish__frame::after{
   content:''; position:absolute; inset:var(--s-12);
@@ -200,13 +200,13 @@ section{padding:var(--s-128) 0}
 }
 .dish h3{font-size:28px; margin:var(--s-24) 0 var(--s-12)}
 .dish p{font-size:16px; color:var(--muted); line-height:1.6}
-.dishes__cta{margin-top:28px; text-align:center}
+.dishes__cta{margin-top:52px; text-align:center}
 
 /* ============ PROSTOR ============ */
 .space{background:var(--antracit)}
 .space__intro{margin-top:var(--s-12); max-width:552px; margin-left:228px; color:#D8D4CC}
 .space__intro em{font-style:italic}
-.space__grid{display:grid; grid-template-columns:repeat(12,1fr); gap:var(--s-24); margin-top:36px}
+.space__grid{display:grid; grid-template-columns:repeat(12,1fr); gap:var(--s-24); margin-top:52px}
 .space__grid figure{margin:0; overflow:hidden; background:#0F0F10}
 .space__grid img{width:100%; height:100%; object-fit:cover; filter:brightness(.66) saturate(.86) contrast(1.03)}
 .sp-a{grid-column:1 / span 7; aspect-ratio:4 / 3}
@@ -215,6 +215,7 @@ section{padding:var(--s-128) 0}
 .space__note{grid-column:1 / span 3; margin-top:var(--s-48); align-self:center}
 
 /* ============ RECENZIJE ============ */
+.reviews__cta{text-align:center; margin-top:52px}
 .reviews{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-48); margin-top:var(--s-64)}
 .review{max-width:360px; margin:0 auto; text-align:center}
 .review p{font-family:var(--display); font-size:20px; line-height:1.6; color:#E2DED6; text-wrap:balance}
@@ -224,7 +225,7 @@ section{padding:var(--s-128) 0}
 /* ============ REZERVACIJE ============ */
 .reserve{text-align:center; position:relative; overflow:hidden}
 .reserve h2{max-width:800px; margin:var(--s-8) auto var(--s-12)}
-.reserve .lede{font-size:16px; max-width:416px; margin:0 auto 28px}
+.reserve .lede{font-size:16px; max-width:480px; margin:0 auto 52px}
 .reserve__actions{display:flex; flex-wrap:wrap; gap:var(--s-16); justify-content:center}
 
 /* ============ FOOTER ============ */
@@ -287,6 +288,13 @@ section{padding:var(--s-128) 0}
   h2, .about__body h2{font-size:clamp(28px,5.6vw,32px)}
   /* 6. tekst iznad trece slike blizi drugoj: 24px razmak mreze + 4px = 28px */
   .space__note{margin-top:var(--s-4); margin-bottom:var(--s-12)}
+  .dishes__head{margin-bottom:40px}
+  .space__grid{margin-top:36px}
+  .hero__row{gap:28px}
+  .dishes__cta{margin-top:28px}
+  .reviews__cta{margin-top:28px}
+  .reserve .lede{margin:0 auto 28px}
+  .prelom-desktop{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition-duration:.01ms !important}
@@ -449,7 +457,7 @@ section{padding:var(--s-128) 0}
         <footer>Petar Maksimović</footer>
       </blockquote>
     </div>
-    <div style="text-align:center; margin-top:28px" class="reveal">
+    <div class="reviews__cta reveal">
       <a class="link-u" href="#">Ostavi recenziju</a>
     </div>
   </div>
@@ -464,7 +472,7 @@ section{padding:var(--s-128) 0}
     <div style="margin-top:var(--s-64)" class="reveal">
       <p class="eyebrow">Rezervacije</p>
       <h2>Javite nam kada dolazite</h2>
-      <p class="lede">Za veče petkom i subotom vredi rezervisati unapred. Terasa se popuni prva.</p>
+      <p class="lede">Za veče petkom i subotom vredi rezervisati unapred.<br class="prelom-desktop"> Terasa se popuni prva.</p>
       <div class="reserve__actions">
         <a class="btn btn--solid" href="#">Rezerviši sto</a>
         <a class="btn" href="tel:+381000000">Pozovi nas</a>
