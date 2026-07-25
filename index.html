@@ -35,7 +35,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0; background:var(--ink); color:var(--bone);
+  margin:0; min-width:360px; background:var(--ink); color:var(--bone);
   font-family:var(--body); font-size:16px; font-weight:300;
   line-height:1.7; -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
@@ -131,7 +131,7 @@ section{padding:var(--s-128) 0}
   background:radial-gradient(60% 50% at 74% 30%, rgba(168,130,60,.14) 0%, transparent 70%);
 }
 .hero__inner{position:relative; z-index:2}
-.hero h1{margin:var(--s-4) 0 var(--s-12); max-width:960px}
+.hero h1{margin:var(--s-8) 0 var(--s-12); max-width:960px}
 .hero h1 em{font-style:italic; color:var(--brass-lit)}
 .hero__row{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:var(--s-32)}
 .hero__row p{max-width:400px; font-size:16px; color:#C9C5BE}
@@ -166,7 +166,7 @@ section{padding:var(--s-128) 0}
   top:var(--s-24); bottom:var(--s-24); border:1px solid rgba(242,239,233,.16); pointer-events:none;
 }
 .about__body{grid-column:7 / span 6; padding-left:var(--s-48)}
-.about__body h2{font-size:clamp(32px,3.8vw,48px); margin:var(--s-4) 0 var(--s-12)}
+.about__body h2{font-size:clamp(32px,3.8vw,48px); margin:var(--s-8) 0 var(--s-12)}
 .about__body p + p{margin-top:var(--s-16)}
 .vision{margin-top:var(--s-32); padding-top:var(--s-24); border-top:1px solid rgba(168,130,60,.28)}
 .vision p{
@@ -192,7 +192,7 @@ section{padding:var(--s-128) 0}
   font-size:12px; letter-spacing:.28em; text-transform:uppercase;
   color:var(--brass-lit); margin-top:var(--s-24);
 }
-.dish__tag + h3{margin-top:var(--s-4)}
+.dish__tag + h3{margin-top:var(--s-8)}
 .dish:hover .dish__frame img{transform:scale(1.05)}
 .dish__frame::after{
   content:''; position:absolute; inset:var(--s-12);
@@ -222,7 +222,7 @@ section{padding:var(--s-128) 0}
 
 /* ============ REZERVACIJE ============ */
 .reserve{text-align:center; position:relative; overflow:hidden}
-.reserve h2{max-width:800px; margin:var(--s-4) auto var(--s-12)}
+.reserve h2{max-width:800px; margin:var(--s-8) auto var(--s-12)}
 .reserve .lede{margin:0 auto var(--s-48)}
 .reserve__actions{display:flex; flex-wrap:wrap; gap:var(--s-16); justify-content:center}
 
@@ -277,13 +277,13 @@ section{padding:var(--s-128) 0}
   /* --- mobilna doterivanja --- */
   /* 1. hero naslov u jedan red na svim telefonima (provereno od 320px navise) */
   /* 2. body tekst priblizen naslovu na 12px */
-  .hero h1{font-size:clamp(24px,7.6vw,40px); margin:var(--s-4) 0 var(--s-12)}
+  .hero h1{font-size:clamp(32px,7.5vw,48px); margin:var(--s-8) 0 var(--s-12)}
   /* 3. veci razmak izmedju kartica jela */
   .dishes{gap:52px}
   /* 4. "Specijalitet kuce" blize nazivu jela */
-  .dish__tag + h3{margin-top:var(--s-4)}
+  .dish__tag + h3{margin-top:var(--s-8)}
   /* 5. "Ambijent koji prica pricu" u dva uravnotezena reda */
-  .space h2{font-size:clamp(20px,6.6vw,32px)}
+  h2, .about__body h2{font-size:clamp(28px,5.6vw,32px)}
   /* 6. tekst iznad trece slike blizi drugoj: 24px razmak mreze + 4px = 28px */
   .space__note{margin-top:var(--s-4)}
 }
@@ -367,7 +367,7 @@ section{padding:var(--s-128) 0}
     <div class="dishes__head reveal">
       <div>
         <p class="eyebrow">Iz naše kuhinje</p>
-        <h2 style="margin-top:var(--s-4)">Tri jela <em>da ricordare</em></h2>
+        <h2 style="margin-top:var(--s-8)">Tri jela <em>da ricordare</em></h2>
       </div>
       <p class="small">Ostalo vas čeka u meniju — od predjela do deserta i karte pića.</p>
     </div>
@@ -410,7 +410,7 @@ section{padding:var(--s-128) 0}
   <div class="wrap">
     <div class="reveal">
       <p class="eyebrow">Trattoria</p>
-      <h2 style="margin-top:var(--s-4); max-width:640px">Ambijent <span class="k-anchor">k</span>oji priča priču</h2>
+      <h2 style="margin-top:var(--s-8); max-width:640px">Ambijent <span class="k-anchor">k</span>oji priča priču</h2>
       <p class="space__intro">Ovde nastaju naše <em>tre piatti da ricordare</em>. Od terase okupane suncem i šumom reke, do sale koja odiše bezvremenskim šarmom pod autentičnim svodovima. Vaše je samo da izaberete gde želite da stvorite nove uspomene.</p>
     </div>
     <div class="space__grid">
@@ -429,7 +429,7 @@ section{padding:var(--s-128) 0}
   <div class="wrap">
     <div class="reveal" style="text-align:center">
       <p class="eyebrow">Recenzije</p>
-      <h2 style="margin-top:var(--s-4)">Šta kažu gosti</h2>
+      <h2 style="margin-top:var(--s-8)">Šta kažu gosti</h2>
     </div>
     <div class="reviews">
       <blockquote class="review reveal">
