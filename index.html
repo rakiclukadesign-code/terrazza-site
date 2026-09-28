@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terrazza — Pizza &amp; Pasta Bar, Valjevo</title>
+<meta name="description" content="Terrazza — Pizza &amp; Pasta Bar u centru Valjeva, Kneza Miloša 3. Terasa nad kejom Kolubare, domaća testenina, pica i pažljivo birana vina.">
+<meta name="theme-color" content="#0B0B0C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -41,6 +43,7 @@ body{
   overflow-x:hidden;
 }
 img{display:block; max-width:100%}
+figure{margin:0}
 a{color:inherit; text-decoration:none}
 
 /* zrno preko cele stranice */
@@ -97,15 +100,24 @@ section{padding:var(--s-128) 0}
   transition:background .5s ease, padding .5s ease, border-color .5s ease;
   border-bottom:1px solid transparent;
 }
-.nav.is-stuck{
-  background:rgba(11,11,12,.92); backdrop-filter:blur(12px);
-  padding:var(--s-16) var(--s-32); border-bottom-color:rgba(168,130,60,.24);
+/* pozadina i blur zive na ::before, ne na samom .nav —
+   backdrop-filter na .nav bi zarobio fixed mobilni meni unutar trake */
+.nav::before{
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:transparent; transition:background .5s ease;
 }
+.nav.is-stuck{padding:var(--s-16) var(--s-32); border-bottom-color:rgba(168,130,60,.24)}
+.nav.is-stuck::before{
+  background:rgba(11,11,12,.92);
+  -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+}
+.nav__logo{position:relative; z-index:28}
 .nav__logo img{height:24px; width:auto; display:block}
 .nav__links{display:flex; align-items:center; gap:var(--s-32)}
 .nav__links a{font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#CFCBC4; transition:color .3s}
 .nav__links a:hover{color:var(--brass-lit)}
-.nav__burger{display:none; background:none; border:0; color:var(--bone); padding:var(--s-8); cursor:pointer}
+.nav__burger{display:none; position:relative; z-index:28; background:none; border:0; color:var(--bone); padding:var(--s-8); cursor:pointer}
+body.menu-open{overflow:hidden}
 
 /* ============ HERO ============ */
 .hero{position:relative; min-height:100svh; display:flex; align-items:flex-end; padding:0 0 var(--s-96)}
@@ -192,13 +204,13 @@ section{padding:var(--s-128) 0}
   font-size:12px; letter-spacing:.28em; text-transform:uppercase;
   color:var(--brass-lit); margin-top:var(--s-24);
 }
-.dish__tag + h3{margin-top:var(--s-4)}
 .dish:hover .dish__frame img{transform:scale(1.05)}
 .dish__frame::after{
   content:''; position:absolute; inset:var(--s-12);
   border:1px solid rgba(224,196,140,.28); border-radius:188px 188px 4px 4px; pointer-events:none;
 }
 .dish h3{font-size:28px; margin:var(--s-24) 0 var(--s-12)}
+.dish .dish__tag + h3{margin-top:var(--s-8)}
 .dish p{font-size:16px; color:var(--muted); line-height:1.6}
 .dishes__cta{margin-top:52px; text-align:center}
 
@@ -259,6 +271,8 @@ section{padding:var(--s-128) 0}
   .sp-b,.sp-c{aspect-ratio:16 / 10; margin-top:0}
   .reviews{grid-template-columns:1fr; gap:var(--s-32)}
   .footer__brand,.footer__col,.footer__col:nth-of-type(2){grid-column:1 / span 12}
+  /* jedna kolona: bez horizontalnog razmaka, inace 11 x 32px gura sadrzaj van ekrana na telefonu */
+  .about,.footer__grid{column-gap:0}
 }
 @media (max-width:640px){
   .wrap{padding:0 var(--s-24)}
@@ -267,7 +281,7 @@ section{padding:var(--s-128) 0}
   .nav__links{display:none}
   .nav__burger{display:block}
   .nav__links.open{
-    display:flex; position:fixed; inset:0; background:rgba(11,11,12,.98);
+    display:flex; position:fixed; inset:0; background:var(--ink);
     flex-direction:column; align-items:center; justify-content:center; gap:var(--s-32); z-index:24;
   }
   .nav__links.open a{font-size:16px}
@@ -282,8 +296,7 @@ section{padding:var(--s-128) 0}
   .hero h1{font-size:clamp(32px,7.5vw,48px); margin:var(--s-8) 0 var(--s-12)}
   /* 3. veci razmak izmedju kartica jela */
   .dishes{gap:52px}
-  /* 4. "Specijalitet kuce" blize nazivu jela */
-  .dish__tag + h3{margin-top:var(--s-8)}
+  /* 4. "Specijalitet kuce" -> naziv jela: 8px, sada vazi i na desktopu (pravilo iznad) */
   /* 5. "Ambijent koji prica pricu" u dva uravnotezena reda */
   h2, .about__body h2{font-size:clamp(28px,5.6vw,32px)}
   /* 6. tekst iznad trece slike blizi drugoj: 24px razmak mreze + 4px = 28px */
@@ -313,13 +326,13 @@ section{padding:var(--s-128) 0}
   </a>
   <div class="nav__links" id="navLinks">
     <a href="#o-nama">O nama</a>
-    <a href="#jela">Meni</a>
+    <a href="meni.html">Meni</a>
     <a href="#prostor">Prostor</a>
     <a href="#recenzije">Recenzije</a>
     <a class="btn" href="#rezervacije">Rezerviši sto</a>
   </div>
   <button class="nav__burger" id="burger" aria-label="Otvori meni" aria-expanded="false">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 7h20M2 17h20"/></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path id="burgerIcon" d="M2 7h20M2 17h20"/></svg>
   </button>
 </nav>
 
@@ -409,7 +422,7 @@ section{padding:var(--s-128) 0}
     </div>
 
     <div class="dishes__cta reveal">
-      <a class="btn" href="/meni">Pogledaj ceo meni</a>
+      <a class="btn" href="meni.html">Pogledaj ceo meni</a>
     </div>
   </div>
 </section>
@@ -498,8 +511,8 @@ section{padding:var(--s-128) 0}
     <div class="footer__col">
       <h4>Stranice</h4>
       <ul>
-        <li><a href="/meni">Meni</a></li>
-        <li><a href="#">Karta pića</a></li>
+        <li><a href="meni.html">Meni</a></li>
+        <li><a href="meni.html#karta-pica">Karta pića</a></li>
         <li><a href="#prostor">Galerija</a></li>
         <li><a href="#recenzije">Recenzije</a></li>
       </ul>
@@ -530,14 +543,20 @@ window.addEventListener('scroll', function(){
 }, {passive:true});
 
 // mobilni meni
-var burger = document.getElementById('burger'), links = document.getElementById('navLinks');
-burger.addEventListener('click', function(){
-  var open = links.classList.toggle('open');
+var burger = document.getElementById('burger'),
+    links  = document.getElementById('navLinks'),
+    icon   = document.getElementById('burgerIcon');
+function setMenu(open){
+  links.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
   burger.setAttribute('aria-expanded', open);
-});
-links.addEventListener('click', function(e){
-  if(e.target.tagName === 'A') { links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
-});
+  burger.setAttribute('aria-label', open ? 'Zatvori meni' : 'Otvori meni');
+  icon.setAttribute('d', open ? 'M5 5l14 14M19 5L5 19' : 'M2 7h20M2 17h20');
+}
+burger.addEventListener('click', function(){ setMenu(!links.classList.contains('open')); });
+links.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && links.classList.contains('open')) setMenu(false); });
+window.addEventListener('resize', function(){ if(window.innerWidth > 640 && links.classList.contains('open')) setMenu(false); });
 
 // reveal na skrol
 if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -556,14 +575,16 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
 }
 
 // uvodni pasus u sekciji Prostor poravnava se sa slovom "k" u naslovu.
-// pozicija se meri iz stvarnog rendera, jer zavisi od fonta i sirine ekrana.
+// pozicija se meri iz stvarnog rendera, jer zavisi od fonta i sirine ekrana,
+// pa se zaokruzuje na najblizi umnozak 4.
 (function(){
   function poravnaj(){
     var k=document.querySelector('.k-anchor'), t=document.querySelector('.space__intro');
     if(!k||!t) return;
     if(window.innerWidth<=1024){ t.style.marginLeft=''; return; }
     var ref=t.parentElement.getBoundingClientRect();
-    t.style.marginLeft=Math.max(0,Math.round(k.getBoundingClientRect().left-ref.left))+'px';
+    var x=k.getBoundingClientRect().left-ref.left;
+    t.style.marginLeft=Math.max(0,Math.round(x/4)*4)+'px'; // skala cetvorke
   }
   poravnaj();
   window.addEventListener('resize', poravnaj);
