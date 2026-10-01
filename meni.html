@@ -7,6 +7,9 @@
 <meta name="description" content="Ceo meni restorana Terrazza u Valjevu sa cenama: doručak, pice iz peći, domaće paste, specijaliteti od mesa, burgeri, salate, poslastice, vina i karta pića.">
 <meta name="theme-color" content="#0B0B0C">
 <link rel="canonical" href="https://terrazzabar.com/meni">
+<link rel="alternate" hreflang="sr" href="https://terrazzabar.com/meni">
+<link rel="alternate" hreflang="en" href="https://terrazzabar.com/en/menu">
+<link rel="alternate" hreflang="x-default" href="https://terrazzabar.com/meni">
 
 <!-- ikone -->
 <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -705,7 +708,13 @@ h2{font-size:clamp(32px,4.4vw,56px)}
 }
 .nav__logo{position:relative; z-index:28}
 .nav__logo img{height:24px; width:auto; display:block}
-.nav__links{display:flex; align-items:center; gap:var(--s-32)}
+.nav__links{display:flex; align-items:center; gap:var(--s-32); margin-left:auto}
+/* prekidač jezika SR / EN */
+.lang{position:relative; z-index:28; display:flex; align-items:center; gap:var(--s-8); font-size:12px; letter-spacing:.24em; text-transform:uppercase}
+.lang a{color:var(--muted); padding:var(--s-4) 0; transition:color .3s}
+.lang a:hover{color:var(--bone)}
+.lang a[aria-current="true"]{color:var(--brass-lit)}
+.lang span{color:rgba(242,239,233,.24); letter-spacing:0}
 .nav__links a{font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#CFCBC4; transition:color .3s}
 .nav__links a:hover,.nav__links a[aria-current="page"]{color:var(--brass-lit)}
 .nav__links a.btn{color:var(--brass-lit)}
@@ -885,6 +894,7 @@ body.menu-open{overflow:hidden}
   .nav{padding:var(--s-16) var(--s-24)}
   .nav__links{display:none}
   .nav__burger{display:block}
+  .lang{margin-left:auto}
   .nav__links.open{
     display:flex; position:fixed; inset:0; background:var(--ink);
     flex-direction:column; align-items:center; justify-content:center; gap:var(--s-32); z-index:24;
@@ -934,6 +944,9 @@ body.menu-open{overflow:hidden}
     <a href="index.html#prostor">Prostor</a>
     <a href="index.html#recenzije">Recenzije</a>
     <a class="btn" href="index.html#rezervacije">Rezerviši sto</a>
+  </div>
+  <div class="lang" aria-label="Jezik / Language">
+    <a href="meni.html" hreflang="sr" lang="sr" aria-current="true">SR</a><span aria-hidden="true">/</span><a href="en/menu.html" hreflang="en" lang="en">EN</a>
   </div>
   <button class="nav__burger" id="burger" aria-label="Otvori meni" aria-expanded="false">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path id="burgerIcon" d="M2 7h20M2 17h20"/></svg>
