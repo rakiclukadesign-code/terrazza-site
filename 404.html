@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stranica nije pronađena — Terrazza, Valjevo</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0B0C">
+<!-- 404 stranica se prikazuje na bilo kojoj adresi (npr. /nesto/drugo),
+     zato su SVI linkovi i slike ovde apsolutni: počinju sa "/" -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-48.png" sizes="48x48">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TERRAZZA — 404
+   Isti tokeni kao index.html i meni.html.
+   PRAVILO SKALE ČETVORKE: svaka px vrednost deljiva je sa 4.
+   Izuzeci: line-height (bezdimenzioni), letter-spacing (em), hairline 1px.
+   ============================================================ */
+:root{
+  --ink:#0B0B0C; --antracit:#141416; --brass:#A8823C; --brass-lit:#E0C48C;
+  --bone:#F2EFE9; --muted:#86817A;
+  --s-4:4px; --s-8:8px; --s-12:12px; --s-16:16px; --s-24:24px;
+  --s-32:32px; --s-48:48px; --s-64:64px; --s-96:96px; --s-128:128px;
+  --display:'Bodoni Moda', Georgia, serif;
+  --body:'Jost', 'Helvetica Neue', Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; min-width:360px; min-height:100svh; display:flex; flex-direction:column;
+  background:var(--ink); color:var(--bone);
+  font-family:var(--body); font-size:16px; font-weight:300; line-height:1.7;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+img{display:block; max-width:100%; height:auto}
+a{color:inherit; text-decoration:none}
+p{margin:0; text-wrap:pretty}
+h1{font-family:var(--display); font-weight:400; margin:0; line-height:1.08; text-wrap:balance;
+   font-size:clamp(40px,7.5vw,96px); letter-spacing:-.01em}
+
+.grain{
+  position:fixed; inset:0; z-index:9; pointer-events:none; opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.eyebrow{font-size:12px; font-weight:400; letter-spacing:.32em; text-transform:uppercase; color:var(--brass-lit)}
+.small{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+
+.btn{
+  display:inline-block; font-size:12px; letter-spacing:.28em; text-transform:uppercase;
+  padding:16px 32px; border:1px solid var(--brass); color:var(--brass-lit);
+  background:transparent; cursor:pointer; transition:background .4s ease, color .4s ease;
+}
+.btn:hover,.btn:focus-visible{background:var(--brass); color:var(--ink)}
+.btn--solid{background:var(--brass); color:var(--ink); border-color:var(--brass)}
+.btn--solid:hover{background:transparent; color:var(--brass-lit)}
+:focus-visible{outline:1px solid var(--brass-lit); outline-offset:4px}
+
+.wrap{width:100%; max-width:1280px; margin:0 auto; padding:0 var(--s-32)}
+.arcade{width:100%; height:32px; display:block; opacity:.32}
+.arcade path{fill:none; stroke:var(--brass); stroke-width:1}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:20;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:var(--s-24); padding:var(--s-16) var(--s-32);
+  border-bottom:1px solid rgba(168,130,60,.24);
+}
+.nav::before{
+  content:''; position:absolute; inset:0; z-index:-1; background:rgba(11,11,12,.92);
+  -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+}
+.nav__logo{position:relative; z-index:28}
+.nav__logo img{height:24px; width:auto; display:block}
+.nav__links{display:flex; align-items:center; gap:var(--s-32)}
+.nav__links a{font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#CFCBC4; transition:color .3s}
+.nav__links a:hover{color:var(--brass-lit)}
+.nav__links a.btn{color:var(--brass-lit)}
+.nav__links a.btn:hover{color:var(--ink)}
+.nav__burger{display:none; position:relative; z-index:28; background:none; border:0; color:var(--bone); padding:var(--s-8); cursor:pointer}
+body.menu-open{overflow:hidden}
+
+/* ============ 404 ============ */
+.lost{
+  flex:1; display:flex; align-items:center; text-align:center;
+  padding:var(--s-128) 0 var(--s-96);
+}
+.lost__code{
+  font-family:var(--display); font-style:italic; font-size:clamp(96px,16vw,192px);
+  line-height:1; color:var(--brass-lit); opacity:.24; margin-bottom:var(--s-24);
+}
+.lost h1{margin:var(--s-8) 0 var(--s-12)}
+.lost h1 em{font-style:italic; color:var(--brass-lit)}
+.lost__lede{font-size:20px; line-height:1.72; color:#D8D4CC; max-width:520px; margin:0 auto}
+.lost__actions{display:flex; flex-wrap:wrap; gap:var(--s-16); justify-content:center; margin-top:var(--s-48)}
+.lost .arcade{margin-top:var(--s-96)}
+
+.foot{border-top:1px solid rgba(168,130,60,.24); padding:var(--s-24) 0}
+.foot .wrap{display:flex; flex-wrap:wrap; gap:var(--s-16); justify-content:space-between}
+
+/* ---------- responsive ---------- */
+@media (max-width:640px){
+  .wrap{padding:0 var(--s-24)}
+  .nav{padding:var(--s-16) var(--s-24)}
+  .nav__links{display:none}
+  .nav__burger{display:block}
+  .nav__links.open{
+    display:flex; position:fixed; inset:0; background:var(--ink);
+    flex-direction:column; align-items:center; justify-content:center; gap:var(--s-32); z-index:24;
+  }
+  .nav__links.open a{font-size:16px}
+  .lost{padding:var(--s-128) 0 var(--s-64)}
+  .lost h1{font-size:clamp(32px,7.5vw,48px)}
+  .lost__lede{font-size:16px}
+  .lost__actions{margin-top:var(--s-32)}
+  .lost .arcade{margin-top:var(--s-64)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a class="nav__logo" href="/" aria-label="Terrazza — početna">
+    <img src="/img/logo.png" width="800" height="158" alt="Terrazza">
+  </a>
+  <div class="nav__links" id="navLinks">
+    <a href="/#o-nama">O nama</a>
+    <a href="/meni">Meni</a>
+    <a href="/#prostor">Prostor</a>
+    <a href="/#recenzije">Recenzije</a>
+    <a class="btn" href="/#rezervacije">Rezerviši sto</a>
+  </div>
+  <button class="nav__burger" id="burger" aria-label="Otvori meni" aria-expanded="false">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path id="burgerIcon" d="M2 7h20M2 17h20"/></svg>
+  </button>
+</nav>
+
+<!-- ============ 404 ============ -->
+<main class="lost">
+  <div class="wrap">
+    <p class="lost__code" aria-hidden="true">404</p>
+    <p class="eyebrow">Stranica nije pronađena</p>
+    <h1>Ovaj sto <em>ne postoji</em></h1>
+    <p class="lost__lede">Adresa koju ste otvorili ne postoji ili je premeštena. Ali kuhinja radi i terasa vas čeka.</p>
+    <div class="lost__actions">
+      <a class="btn btn--solid" href="/">Na početnu</a>
+      <a class="btn" href="/meni">Pogledaj meni</a>
+    </div>
+    <svg class="arcade" viewBox="0 0 1200 32" preserveAspectRatio="none" aria-hidden="true"><path d="M0 32 Q0 4 50 4 Q100 4 100 32 Q100 4 150 4 Q200 4 200 32 Q200 4 250 4 Q300 4 300 32 Q300 4 350 4 Q400 4 400 32 Q400 4 450 4 Q500 4 500 32 Q500 4 550 4 Q600 4 600 32 Q600 4 650 4 Q700 4 700 32 Q700 4 750 4 Q800 4 800 32 Q800 4 850 4 Q900 4 900 32 Q900 4 950 4 Q1000 4 1000 32 Q1000 4 1050 4 Q1100 4 1100 32 Q1100 4 1150 4 Q1200 4 1200 32"/></svg>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="small">© 2026 Terrazza, Valjevo</p>
+    <p class="small">Kneza Miloša 3</p>
+  </div>
+</footer>
+
+<script>
+// mobilni meni
+var burger = document.getElementById('burger'),
+    links  = document.getElementById('navLinks'),
+    icon   = document.getElementById('burgerIcon');
+function setMenu(open){
+  links.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? 'Zatvori meni' : 'Otvori meni');
+  icon.setAttribute('d', open ? 'M5 5l14 14M19 5L5 19' : 'M2 7h20M2 17h20');
+}
+burger.addEventListener('click', function(){ setMenu(!links.classList.contains('open')); });
+links.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && links.classList.contains('open')) setMenu(false); });
+window.addEventListener('resize', function(){ if(window.innerWidth > 640 && links.classList.contains('open')) setMenu(false); });
+</script>
+</body>
+</html>

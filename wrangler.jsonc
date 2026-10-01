@@ -1,0 +1,12 @@
+{
+  // Cloudflare podešavanja za sajt Terrazza (statični sajt, bez servera)
+  "name": "terrazza",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": ".",
+    // nepostojeća adresa -> prikaži 404.html (sa statusom 404)
+    "not_found_handling": "404-page",
+    // /meni radi bez .html
+    "html_handling": "auto-trailing-slash"
+  }
+}
