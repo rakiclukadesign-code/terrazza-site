@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" href="img/favicon-48.png" sizes="48x48">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-<!-- deljenje linka (Facebook, Instagram, Viber, WhatsApp) -->
+<!-- deljenje linka (Instagram, Viber, WhatsApp, Facebook) -->
 <meta property="og:type" content="restaurant">
 <meta property="og:site_name" content="Terrazza">
 <meta property="og:locale" content="sr_RS">
@@ -29,8 +29,7 @@
 <!-- hero slika se učitava odmah -->
 <link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-1000.webp 1000w, img/hero.webp 2000w" imagesizes="100vw" fetchpriority="high">
 
-<!-- strukturirani podaci za Google (restoran, adresa, radno vreme, meni)
-     KAD STIGNE PRAVI BROJ: dodati "telephone": "+381 ..." ispod "priceRange" -->
+<!-- strukturirani podaci za Google (restoran, adresa, telefon, radno vreme, meni, Instagram) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,7 +43,9 @@
   "image": [
     "https://terrazzabar.com/img/og-terrazza.jpg",
     "https://terrazzabar.com/img/prostor-sala.webp",
-    "https://terrazzabar.com/img/jelo-terrazza-pica.webp"
+    "https://terrazzabar.com/img/jelo-terrazza-pica.webp",
+    "https://terrazzabar.com/img/jelo-biftek.webp",
+    "https://terrazzabar.com/img/jelo-mlinci.webp"
   ],
   "servesCuisine": [
     "Italijanska",
@@ -52,6 +53,10 @@
     "Paste"
   ],
   "priceRange": "$$",
+  "telephone": "+381694274455",
+  "sameAs": [
+    "https://www.instagram.com/terrazza_va/"
+  ],
   "acceptsReservations": true,
   "hasMenu": "https://terrazzabar.com/meni",
   "address": {
@@ -554,7 +559,7 @@ body.menu-open{overflow:hidden}
       </blockquote>
     </div>
     <div class="reviews__cta reveal">
-      <a class="link-u" href="#">Ostavi recenziju</a>
+      <a class="link-u" href="https://share.google/JsNEH27K5tZU8zBrw" target="_blank" rel="noopener">Ostavi recenziju</a>
     </div>
   </div>
 </section>
