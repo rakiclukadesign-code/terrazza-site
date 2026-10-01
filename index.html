@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terrazza Valjevo — Pizza &amp; Pasta Bar sa terasom na Kolubari</title>
-<meta name="description" content="Terrazza — Pizza &amp; Pasta Bar u centru Valjeva, Kneza Miloša 3. Terasa nad kejom Kolubare, pica iz peći, domaća testenina i pažljivo birana vina. Rezervišite sto.">
+<meta name="description" content="Pizza &amp; Pasta Bar u centru Valjeva, Kneza Miloša 3. Terasa nad Kolubarom, pica iz peći, domaća testenina i birana vina. Rezervišite sto.">
 <meta name="theme-color" content="#0B0B0C">
 <link rel="canonical" href="https://terrazzabar.com/">
 <link rel="alternate" hreflang="sr" href="https://terrazzabar.com/">
@@ -15,6 +15,8 @@
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" href="img/favicon-48.png" sizes="48x48">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="img/icon-192.png" sizes="192x192">
+<link rel="manifest" href="site.webmanifest">
 
 <!-- deljenje linka (Instagram, Viber, WhatsApp, Facebook) -->
 <meta property="og:type" content="restaurant">
@@ -26,7 +28,8 @@
 <meta property="og:image" content="https://terrazzabar.com/img/og-terrazza.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Enterijer restorana Terrazza u Valjevu">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Terrazza — Pizza &amp; Pasta Bar, Valjevo">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- hero slika se učitava odmah -->
@@ -238,7 +241,7 @@ body.menu-open{overflow:hidden}
   background:radial-gradient(60% 50% at 74% 30%, rgba(168,130,60,.14) 0%, transparent 70%);
 }
 .hero__inner{position:relative; z-index:2}
-.hero h1{margin:var(--s-8) 0 var(--s-12); max-width:960px}
+.hero h1{margin:var(--s-8) 0 var(--s-12); white-space:nowrap} /* naslov uvek u jednom redu (SR i EN) */
 .hero h1 em{font-style:italic; color:var(--brass-lit)}
 .hero__row{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:52px}
 .hero__row p{max-width:400px; font-size:16px; color:#C9C5BE}
@@ -323,8 +326,9 @@ body.menu-open{overflow:hidden}
 
 /* terasa: tekst + snimak + fotografija spolja, asimetrično */
 .terrace{display:grid; grid-template-columns:repeat(12,1fr); gap:var(--s-24); margin-top:var(--s-128); align-items:start}
-.terrace__body{grid-column:1 / span 3; align-self:center}
-.terrace__body h3{font-size:32px; line-height:1.16; margin:var(--s-8) 0 var(--s-12)}
+.terrace__body{grid-column:1 / span 4; align-self:center; padding-right:var(--s-32)}
+.terrace__body h3{font-size:32px; line-height:1.16; margin:var(--s-8) 0 var(--s-12); white-space:nowrap} /* "Nad kejom Kolubare" u jednom redu */
+@media (min-width:1025px) and (max-width:1200px){ .terrace__body h3{font-size:28px} }
 .terrace__body p:last-child{color:#C9C5BE}
 .terrace figure{overflow:hidden; background:#0F0F10; aspect-ratio:4 / 5}
 .terrace video,.terrace img{width:100%; height:100%; object-fit:cover; display:block; filter:brightness(.78) saturate(.88) contrast(1.03)}
@@ -378,7 +382,7 @@ body.menu-open{overflow:hidden}
   .sp-a,.sp-b,.sp-c,.space__note{grid-column:1 / span 12}
   .sp-b,.sp-c{aspect-ratio:16 / 10; margin-top:0}
   .terrace{margin-top:var(--s-96)}
-  .terrace__body{grid-column:1 / span 12; margin-bottom:var(--s-24)}
+  .terrace__body{grid-column:1 / span 12; margin-bottom:var(--s-24); padding-right:0}
   .tr-video{grid-column:1 / span 6}
   .tr-photo{grid-column:7 / span 6; margin-top:var(--s-64)}
   .reviews{grid-template-columns:1fr; gap:var(--s-32)}
@@ -407,6 +411,8 @@ body.menu-open{overflow:hidden}
   /* 1. hero naslov u jedan red na svim telefonima (provereno od 320px navise) */
   /* 2. body tekst priblizen naslovu na 12px */
   .hero h1{font-size:clamp(32px,7.5vw,48px); margin:var(--s-8) 0 var(--s-12)}
+  /* engleski naslov je duži: 28px da stane u jedan red od 360px */
+  html[lang="en"] .hero h1{font-size:clamp(28px,7.2vw,48px)}
   /* 3. veci razmak izmedju kartica jela */
   .dishes{gap:52px}
   /* 4. "Specijalitet kuce" -> naziv jela: 8px, sada vazi i na desktopu (pravilo iznad) */
